@@ -1,7 +1,7 @@
 import simpleaudio as sa
 
-laughtrack = sa.WaveObject.from_wave_file('laughtrack.wav')
-applause = sa.WaveObject.from_wave_file('applause.wav')
+laughtrack = sa.WaveObject.from_wave_file('sounds/laughtrack.wav')
+applause = sa.WaveObject.from_wave_file('sounds/applause.wav')
 
 def play_laughtrack():
   play_obj = laughtrack.play()
