@@ -5,18 +5,28 @@ import time
 import re
 import sys
 
-driver = webdriver.Firefox(executable_path='./geckodriver')
-
-driver.get('https://www.ted.com/talks?page=41&sort=newest&language=en')
+FIREFOX_DRIVER_PATH = './geckodriver'
 
 TALK_XPATH = "//div[@id='browse-results']//div[1]//div//div//div//div//div[2]//h4[2]//a"
 TRANSCRIPT_BUTTON_XPATH = "//div[@id='content']//div//div[4]//div[1]//div/a[2]"
 TRANSCRIPT_SECTION_XPATH = "//div[@id='content']//div//div[4]//div[2]//section//div//div[2]//p"
 NEXT_PAGE_XPATH = "//*[@id='browse-results']/div[2]/div/a[last()]"
-LAUGHTER = '(Laughter)'
-LAUGHTER_THRESHOLD = 3
 
+LAUGHTER_THRESHOLD = 3
 NUM_TALKS = 100
+START_PAGE = 41
+
+LAUGHTER = '(Laughter)'
+
+RESET = False
+
+# Clear text file
+if RESET:
+  with open('ted_scraped.txt', 'w') as f:
+    f.truncate(0)
+
+driver = webdriver.Firefox(executable_path=FIREFOX_DRIVER_PATH)
+driver.get(f'https://www.ted.com/talks?page={START_PAGE}&sort=newest&language=en')
 talk_count = 0
 
 def get_ith_talk(i):
