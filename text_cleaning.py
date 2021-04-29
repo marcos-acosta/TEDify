@@ -7,10 +7,13 @@ import numpy as np
 import json
 import re
 
-model = load_model('transformer_2')
+MODEL_NAME = 'transformer'
+WORD_ENCODING_NAME = 'word_to_index.json'
+
+model = load_model(MODEL_NAME)
 print('[LAUGHTRACK] Transformer loaded!')
 
-with open('word_to_index.json') as f:
+with open(WORD_ENCODING_NAME) as f:
   word_to_index = json.load(f)
 index_to_word = word_to_index.keys()
 
