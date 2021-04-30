@@ -15,18 +15,16 @@ import re
 
 print('[LAUGHTRACK] Dependencies loaded!')
 
-reactions = ["😐", "👏", "😂"]
+REACTIONS = ["😐", "👏", "😂"]
 
 # Audio recording parameters
 RATE = 16000
 CHUNK = int(RATE / 10)  # 100ms
 
-# export GOOGLE_APPLICATION_CREDENTIALS="google-api-creds.json"
-
 running_transcript = []
 
 def debug_reactions(probs):
-  reacc = reactions[np.argmax(probs)]
+  reacc = REACTIONS[np.argmax(probs)]
   print(f"[TRANSCRIPTION]: {running_transcript[-1]}")
   print(f">>> [AUDIENCE]: {reacc}")
 
