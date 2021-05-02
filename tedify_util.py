@@ -21,11 +21,11 @@ def setup(encoding_fname, model_dirname, verbose=True):
   global word_to_index
   model = load_model(model_dirname)
   if verbose:
-    print('[TEDify] Transformer loaded!')
+    print(f'[TEDify] Transformer "{model_dirname}" loaded!')
   with open(encoding_fname) as f:
     word_to_index = json.load(f)
-  if verbose:
-    print('[TEDify] Word encodings loaded!')
+    if verbose:
+      print(f'[TEDify] Encoding "{encoding_fname}" loaded!')
 
 def split_sentences(txt):
   ''' Tokenize lines into sentences and return those sentences '''

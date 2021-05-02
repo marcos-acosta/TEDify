@@ -41,8 +41,10 @@ running_transcript = []
 def debug_reactions(probs):
   reacc = REACTIONS[np.argmax(probs)]
   if verbose:
-    print(f"[TRANSCRIPTION]: {running_transcript[-1]}")
-    print(f">>> [AUDIENCE]: {reacc}")
+    print(f"[TRANSCRIPT WINDOW]:")
+    for sentence in running_transcript:
+      print(f' {sentence}')
+    print(f">>> [AUDIENCE]: {reacc}\n")
 
 def handle_probs(probs, debug=True):
   if debug:
