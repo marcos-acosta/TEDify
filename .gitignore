@@ -1,0 +1,15 @@
+# OS / environment
+venv/
+__pycache__/
+.ipynb_checkpoints
+.DS_Store/
+
+# Scraping
+geckodriver
+geckodriver.log
+
+# Private
+google-api-creds.json
+
+# Data
+ted_talks_en.csv
