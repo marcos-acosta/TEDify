@@ -1,6 +1,10 @@
 # TEDify
 
-Explanation
+TEDify is an NLP model for real-time audience feedback (laughter and applause), trained on audience reactions from thousands of TED Talks.
+
+## Demo
+
+[![TEDify demo](http://img.youtube.com/vi/VbxxvNJfpQY/0.jpg)](https://www.youtube.com/watch?v=VbxxvNJfpQY "TEDify demo")
 
 ## Installation & Usage
 
